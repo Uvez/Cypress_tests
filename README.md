@@ -27,11 +27,13 @@ Test data are stored under `cypress/fixtures/testData.json`
 ## Running task.task.html as localhost and update the localhost in env file
 To run `task.html` as host.
 Follow the below steps 
-* Run the following command in cmd
+* Run the following command in cmd where `task.html` is stored in the directory.
     `serve`
 
 * Verify and check the localhost e.g which port it is being executed.
     `e.g http://localhost:3000/task`
+
+* to stop the server - Use `CTRL + C`
 
 * Update the localhost URL into cypress.config.js in env as below.
   
