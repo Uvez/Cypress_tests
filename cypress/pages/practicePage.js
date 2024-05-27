@@ -28,6 +28,7 @@ class practicePage{
 
         cy.visit(Cypress.env('URL'))
     }
+    //get details of dropdown
     getDropdownvalue(expectedvalue){
         try{
             cy.get(this.weblocators.dropdown).find(':selected').contains(expectedvalue)
@@ -36,7 +37,7 @@ class practicePage{
             cy.log(error)
         }
     }
-
+     //function to verify all dropdown values
     verifydropDownvalues(expectedvalues)
     {
         try
@@ -54,6 +55,7 @@ class practicePage{
             cy.log(error)
         }
     }
+      //function to verify to uploaded file 
     verifyuploadFile(filename)
     {
         try{
@@ -65,7 +67,7 @@ class practicePage{
             cy.log(error)
         }
     }
-
+     // check New tab is working
     verifyNewTab(expectedURL)
     {
         try{
@@ -77,11 +79,12 @@ class practicePage{
         }
     }
 
+    //click on new tab
     clickNewTab()
     {
         cy.get(this.weblocators.opentab).click()
     }
-
+     //verfiy and enter the modal text
     enterandverifyModalText(modeltext){
         try {
             cy.get(this.weblocators.modaltext).should('be.visible')
@@ -91,6 +94,7 @@ class practicePage{
         }
         
     }
+      // click on alert button
     clickalertButton(expectedtext){
         try {
             cy.get(this.weblocators.alertBtn).click()
@@ -102,6 +106,7 @@ class practicePage{
         }
        
     }
+    //click on confirm button
     clickconfirmButton(expectedtext){
         try{
         cy.get(this.weblocators.confirmBtn).click()
@@ -112,7 +117,7 @@ class practicePage{
             cy.log(error)
         }  
     }
-
+    // click to verify hide button
     clickandverifyhideButton(){
         try {
             cy.get(this.weblocators.hidetextBtn).click()
@@ -122,6 +127,7 @@ class practicePage{
         }
      
     }
+    //cick to verify show button
     clickandverifyshowButton(){
         try {
             cy.get(this.weblocators.showtextBtn).click()
@@ -130,7 +136,7 @@ class practicePage{
             cy.log(error)
         }      
     }
-
+      //verify mouse hover top button
     verifymouseHoverTopButton(){
         try{
             cy.get(this.weblocators.mouseHoverBtn).click()
@@ -141,7 +147,7 @@ class practicePage{
             cy.log(error)
         }   
     }
-
+     // to verify mouse hover reload button
     verifymouseHoverReloadButton(){
         try {
             cy.get(this.weblocators.mouseHoverBtn).click()
@@ -153,7 +159,7 @@ class practicePage{
         }
         
     }
-
+ //to get Iframe elements and perform specific action into it
     getandverifyIframeElements(expectedtext,actionname){
         try {
             cy.frameLoaded(this.weblocators.iframeWindow).should('be.visible')
