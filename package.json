@@ -1,0 +1,29 @@
+{
+  "name": "cypress_tests",
+  "version": "1.0.0",
+  "description": "Cypress Test Automation",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Uvez/Cypress_tests.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open",
+    "start": "concurrently --kill-others \"npm run cy:open\" \"serve\"",
+    "test:chrome": "concurrently --kill-others \"serve\" \"npx cypress run --spec cypress/e2e/practiceTest.cy.js --headless --browser chrome\"",
+    "test:practiceTest": "concurrently --kill-others \"serve\" \"npx cypress run --spec cypress/e2e/practiceTest.cy.js --headless\"",
+    "test:edge": "concurrently --kill-others \"serve\" \"npx cypress run --spec cypress/e2e/practiceTest.cy.js --headless --browser edge\""
+  },
+  "author": "Uvez Shaikh",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cypress": "^13.10.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "http-server": "^14.1.1",
+    "serve": "^14.2.3"
+  }
+}

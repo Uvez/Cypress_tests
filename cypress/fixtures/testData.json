@@ -1,0 +1,16 @@
+{
+    "modeltext":"Tester",
+    "dropdownlistvalues":["Option1","Option2","Option3"],
+    "filename_jpg":"eg-logo.jpg",
+    "filename_png":"Sample_PNG.png",
+    "Textfieldname":"Test",
+    "ConfirmModalMessage":"Are you sure you want to confirm?",
+    "AlertModalMessage":"share this practice page and share your knowledge.",
+    "alertFilePath":"cypress/fixtures/alert-text.txt",
+    "textFilecontents":"Hello from Easygenerator",
+    "IframeText":"Why Easygenerator",
+    "IframeemailId":"test@xyz.com",
+    "Iframewindowtext":"\nSecurity and Compliance at Easygenerator",
+    "HomeButtontext":"Home",
+    "EasyURL":"https://www.easygenerator.com/en/'"
+}

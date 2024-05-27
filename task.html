@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Practice Page</title>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="images/rs_logo.png" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function uploadImage() {
+            const el = document.querySelector('input[type="file"]');
+            const wrapper = document.querySelector('.image-upload-wrapper');
+            const img = document.createElement('img');
+            img.src = URL.createObjectURL(el.files[0]);
+            img.style.height = '400px';
+            img.style.width = '500px';
+            img.style.display = 'block';
+            img.style.marginTop = '10px';
+            wrapper.appendChild(img);
+        }
+
+        function showHoverPopup() {
+            const popup = document.querySelector('.hover-content');
+            popup.classList.add('hovered');
+        }
+
+        function hideHoverPopup() {
+            const popup = document.querySelector('.hover-content');
+            popup.classList.remove('hovered');
+        }
+
+        function openTab() {
+            window.open('https://easygenerator.com', '_blank');
+        }
+
+        function myFunction() {
+            myWin = window.open(
+                'https://easygenerator.com',
+                'myWin',
+                'width=1200, height=600, top=100, left=100, scrollbars=yes, resizable=yes'
+            );
+        }
+
+        function displayAlert() {
+            var value = document.getElementById('name').value;
+            alert('Hello ' + value + ', share this practice page and share your knowledge');
+            document.getElementById('name').value = '';
+        }
+
+        function displayConfirm() {
+            var value = document.getElementById('name').value;
+            confirm('Hello ' + value + ', Are you sure you want to confirm?');
+            document.getElementById('name').value = '';
+        }
+
+        function hideElement() {
+            var x = document.getElementById('displayed-text');
+            //style.visibility = "hidden";
+            x.style.display = 'none';
+        }
+
+        function showElement() {
+            var x = document.getElementById('displayed-text');
+            //style.visibility = "visible";
+            x.style.display = 'block';
+        }
+    </script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .footer_top_agile_w3ls {
+            padding: 3em 0;
+        }
+
+        ​ .footer_top_agile_w3ls {
+            padding: 2em 0;
+        }
+
+        ​ .footer_top_agile_w3ls {
+            background: #eee;
+            padding: 4em 0;
+        }
+
+        ​ h1 {
+            margin-bottom: 30px;
+        }
+
+        ​ select {
+            font-size: 14px;
+            width: 120px;
+            height: 30px;
+            border: 2px solid #39949a;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+        }
+
+        ​ .dropbtn {
+            background-color: #39949a;
+            /* #4CAF50; */
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+        }
+
+        ​ .btn-style {
+            background-color: #39949a;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+        }
+
+        ​
+            /* mouse-hover Content (Hidden by Default) */
+        .mouse-hover-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        ​
+            /* Links inside the mouse-hover */
+        .mouse-hover-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        ​
+            /* Change color of mouse-hover links on hover */
+        .mouse-hover-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        ​
+        ​
+            /* Change the background color of the mouse-hover button when the mouse-hover content is shown */
+        .mouse-hover:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+
+        ​ fieldset {
+            font-size: 14px;
+            /* border: 2px solid #000; */
+            /*padding: 1em;*/
+            padding: 0.2em;
+            border-radius: 0.5em;
+        }
+
+        ​ legend {
+            font-size: 14px;
+            width: auto;
+            color: #fff;
+            background: #2b3636;
+            padding: 0.25em 1em;
+            border-radius: 1em;
+        }
+
+        ​
+            /* One radio button per line */
+        label {
+            display: block;
+            cursor: pointer;
+            line-height: 2;
+            font-size: 1em;
+        }
+
+        ​ body {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+        }
+
+        ​ #product {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            width: 400px;
+            border-collapse: separate;
+            /* border-spacing:10px; */
+            /* margin-left: 200px; */
+        }
+
+        ​ #product td,
+        #product th {
+            border: 1px solid #39949a;
+            /* #4CAF50; */
+            padding: 3px 7px 2px 7px;
+            font-size: 1em;
+        }
+
+        ​ #product th {
+            font-size: 1.1em;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            background-color: #39949a;
+            color: #fff;
+            color: antiquewhite;
+        }
+
+        ​ .left-align {
+            float: left;
+        }
+
+        ​ .right-align {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            /*width:400px; */
+            /*margin-left: 100px;*/
+            float: right;
+        }
+
+        ​ .cen-align {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            /*width:400px; */
+            margin-left: 150px;
+            margin-right: 100px;
+            float: left;
+        }
+
+        ​ .cen-left-align {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            /*width:400px; */
+            margin-left: 70px;
+            margin-right: 30px;
+            float: left;
+        }
+
+        ​ .cen-right-align {
+            font-family: 'Trebuchet MS', Arial, sans-serif;
+            /*width:400px; */
+            margin-left: 60px;
+            margin-right: 30px;
+            float: left;
+        }
+
+        ​ .block {
+            width: 900px;
+            position: relative;
+            display: inline-block;
+            margin: 0px 0px 2px 20px;
+            margin-top: 2px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            text-align: justify;
+            border-bottom: 0.5px solid;
+            border-bottom-color: #2b3636;
+        }
+
+        ​ .table-display {
+            width: 400px;
+            padding: 0.5em;
+            margin: 0px 20px 20px 10px;
+        }
+
+        ​ .default-row-spacer {
+            margin-bottom: 10px;
+        }
+
+        ​ .large-row-spacer {
+            margin-bottom: 20px;
+        }
+
+        ​ inputs:-webkit-input-placeholder {
+            color: #b5b5b5;
+        }
+
+        ​ inputs-moz-placeholder {
+            color: #b5b5b5;
+        }
+
+        ​ .inputs {
+            background: #f5f5f5;
+            font-size: 14px;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            border: none;
+            padding: 13px 10px;
+            /* width: 270px; */
+            margin-bottom: 20px;
+            box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1);
+            clear: both;
+        }
+
+        ​ .inputs:focus {
+            background: #fff;
+            box-shadow: 0 0 0 3px #39949a, inset 0 2px 3px rgba(0, 0, 0, 0.2), 0px 5px 5px rgba(0, 0, 0, 0.15);
+            outline: none;
+        }
+
+        ​ legend.switch-tab {
+            margin-bottom: 15px;
+        }
+
+        ​ a#opentab {
+            color: white !important;
+        }
+
+        ​
+
+        /*Following style is for Computer, Laptops*/
+        @media screen and (min-width: 900px) {
+            .logoClass {
+                margin: -50px 250px 0px -650px;
+                width: 85px;
+            }
+
+            ​ .header_style {
+                height: 5px;
+            }
+        }
+
+        ​
+
+        /*Following style is for Mobile, Tabs*/
+        @media only screen and (max-width: 900px) {
+            .logoClass {
+                margin: -40px 0px 0px -850px;
+                width: 85px;
+            }
+
+            ​ .header_style {
+                height: 5px;
+                width: 1000px;
+            }
+
+            ​ .footer_style {
+                width: 1000px;
+            }
+
+            ​ ​ .alert_example {
+                margin-top: -80px;
+            }
+        }
+
+        .hover-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hover-content {
+            display: none;
+            position: absolute;
+            top: 35px;
+            left: 20px;
+            background: linear-gradient(90deg, #2cbd9a 0%, #65c86d);
+            color: white;
+            border: none;
+            width: 150px;
+            padding: 5px;
+            outline: none
+        }
+
+        .hovered {
+            display: block;
+        }
+
+        .hover-content > a {
+            color: white;
+        }
+
+        .hover-container:hover .hover-content {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+    </style>
+    <!-- footer Style -->
+    <style type="text/css">
+        .gffoot ul {
+            float: left;
+            height: 100%;
+            padding-right: 10px;
+            margin: 0;
+            list-style: none;
+            min-width: 177px;
+        }
+
+        ​ .gf-t {
+            width: 100%;
+            margin-top: 20px;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        ​ table {
+            display: table;
+            border-collapse: separate;
+            border-spacing: 2px;
+            border-color: grey;
+        }
+
+        ​ .gh-w {
+            line-height: 1;
+            font-size: 14px;
+            color: #333;
+            font-family: 'Helvetica neue', Helvetica, Arial, Sans-serif;
+        }
+
+        ​ .gh-w {
+            text-align: left;
+        }
+
+        ​ #gf-BIG.gffoot li {
+            margin-bottom: 12px;
+            display: list-item;
+            font-size: 12px;
+        }
+
+        ​ a {
+            color: #767676 !important;
+        }
+
+        ​ a:hover {
+            color: #767676 !important;
+        }
+
+        ​ .totalAmount {
+            margin-left: 200px;
+            font-weight: bold;
+        }
+
+        ​ a.blinkingText {
+            float: right;
+            margin-top: -37px;
+            font-weight: bold;
+            padding: 0px 10px;
+            font-size: 20px;
+            background: #27b35f;
+            color: #fff !important;
+            animation: blink 1s linear infinite;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        ​
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+        ​ 50 %
+
+        {
+            opacity: 0.8
+        ;
+        }
+        ​
+
+        100
+        %
+        {
+            opacity: 1
+        ;
+        }
+        }
+
+        h1, h3, fieldset {
+            margin-top: 25px;
+        }
+    </style>
+    <!-- footer Style Ends -->
+    <!-- Autocomplete -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            var availableTags = [
+                'Afghanistan',
+                'Albania',
+                'Algeria',
+                'American Samoa',
+                'Andorra',
+                'Angola',
+                'Anguilla',
+                'Antarctica',
+                'Antigua and Barbuda',
+                'Argentina',
+                'Armenia',
+                'Aruba',
+                'Australia',
+                'Austria',
+                'Azerbaijan',
+                'Bahamas',
+                'Bahrain',
+                'Bangladesh',
+                'Barbados',
+                'Belarus',
+                'Belgium',
+                'Belize',
+                'Benin',
+                'Bermuda',
+                'Bhutan',
+                'Bolivia',
+                'Bosnia and Herzegowina',
+                'Botswana',
+                'Bouvet Island',
+                'Brazil',
+                'British Indian Ocean Territory',
+                'Brunei Darussalam',
+                'Bulgaria',
+                'Burkina Faso',
+                'Burundi',
+                'Cambodia',
+                'Cameroon',
+                'Canada',
+                'Cape Verde',
+                'Cayman Islands',
+                'Central African Republic',
+                'Chad',
+                'Chile',
+                'China',
+                'Christmas Island',
+                'Cocos (Keeling) Islands',
+                'Colombia',
+                'Comoros',
+                'Congo',
+                'Congo, the Democratic Republic of the',
+                'Cook Islands',
+                'Costa Rica',
+                "Cote d'Ivoire",
+                'Croatia (Hrvatska)',
+                'Cuba',
+                'Cyprus',
+                'Czech Republic',
+                'Denmark',
+                'Djibouti',
+                'Dominica',
+                'Dominican Republic',
+                'East Timor',
+                'Ecuador',
+                'Egypt',
+                'El Salvador',
+                'Equatorial Guinea',
+                'Eritrea',
+                'Estonia',
+                'Ethiopia',
+                'Falkland Islands (Malvinas)',
+                'Faroe Islands',
+                'Fiji',
+                'Finland',
+                'France',
+                'France Metropolitan',
+                'French Guiana',
+                'French Polynesia',
+                'French Southern Territories',
+                'Gabon',
+                'Gambia',
+                'Georgia',
+                'Germany',
+                'Ghana',
+                'Gibraltar',
+                'Greece',
+                'Greenland',
+                'Grenada',
+                'Guadeloupe',
+                'Guam',
+                'Guatemala',
+                'Guinea',
+                'Guinea-Bissau',
+                'Guyana',
+                'Haiti',
+                'Heard and Mc Donald Islands',
+                'Holy See (Vatican City State)',
+                'Honduras',
+                'Hong Kong',
+                'Hungary',
+                'Iceland',
+                'India',
+                'Indonesia',
+                'Iran (Islamic Republic of)',
+                'Iraq',
+                'Ireland',
+                'Israel',
+                'Italy',
+                'Jamaica',
+                'Japan',
+                'Jordan',
+                'Kazakhstan',
+                'Kenya',
+                'Kiribati',
+                "Korea, Democratic People's Republic of",
+                'Korea, Republic of',
+                'Kuwait',
+                'Kyrgyzstan',
+                "Lao, People's Democratic Republic",
+                'Latvia',
+                'Lebanon',
+                'Lesotho',
+                'Liberia',
+                'Libyan Arab Jamahiriya',
+                'Liechtenstein',
+                'Lithuania',
+                'Luxembourg',
+                'Macau',
+                'Macedonia, The Former Yugoslav Republic of',
+                'Madagascar',
+                'Malawi',
+                'Malaysia',
+                'Maldives',
+                'Mali',
+                'Malta',
+                'Marshall Islands',
+                'Martinique',
+                'Mauritania',
+                'Mauritius',
+                'Mayotte',
+                'Mexico',
+                'Micronesia, Federated States of',
+                'Moldova, Republic of',
+                'Monaco',
+                'Mongolia',
+                'Montserrat',
+                'Morocco',
+                'Mozambique',
+                'Myanmar',
+                'Namibia',
+                'Nauru',
+                'Nepal',
+                'Netherlands',
+                'Netherlands Antilles',
+                'New Caledonia',
+                'New Zealand',
+                'Nicaragua',
+                'Niger',
+                'Nigeria',
+                'Niue',
+                'Norfolk Island',
+                'Northern Mariana Islands',
+                'Norway',
+                'Oman',
+                'Pakistan',
+                'Palau',
+                'Panama',
+                'Papua New Guinea',
+                'Paraguay',
+                'Peru',
+                'Philippines',
+                'Pitcairn',
+                'Poland',
+                'Portugal',
+                'Puerto Rico',
+                'Qatar',
+                'Reunion',
+                'Romania',
+                'Russian Federation',
+                'Rwanda',
+                'Saint Kitts and Nevis',
+                'Saint Lucia',
+                'Saint Vincent and the Grenadines',
+                'Samoa',
+                'San Marino',
+                'Sao Tome and Principe',
+                'Saudi Arabia',
+                'Senegal',
+                'Seychelles',
+                'Sierra Leone',
+                'Singapore',
+                'Slovakia (Slovak Republic)',
+                'Slovenia',
+                'Solomon Islands',
+                'Somalia',
+                'South Africa',
+                'South Georgia and the South Sandwich Islands',
+                'Spain',
+                'Sri Lanka',
+                'St. Helena',
+                'St. Pierre and Miquelon',
+                'Sudan',
+                'Suriname',
+                'Svalbard and Jan Mayen Islands',
+                'Swaziland',
+                'Sweden',
+                'Switzerland',
+                'Syrian Arab Republic',
+                'Taiwan, Province of China',
+                'Tajikistan',
+                'Tanzania, United Republic of',
+                'Thailand',
+                'Togo',
+                'Tokelau',
+                'Tonga',
+                'Trinidad and Tobago',
+                'Tunisia',
+                'Turkey',
+                'Turkmenistan',
+                'Turks and Caicos Islands',
+                'Tuvalu',
+                'Uganda',
+                'Ukraine',
+                'United Arab Emirates',
+                'United Kingdom (UK)',
+                'United States (USA)',
+                'United States Minor Outlying Islands',
+                'Uruguay',
+                'Uzbekistan',
+                'Vanuatu',
+                'Venezuela',
+                'Vietnam',
+                'Virgin Islands (British)',
+                'Virgin Islands (U.S.)',
+                'Wallis and Futuna Islands',
+                'Western Sahara',
+                'Yemen',
+                'Yugoslavia',
+                'Zambia',
+                'Zimbabwe'
+            ];
+            $('#autocomplete').autocomplete({
+                maxResults: 10,
+                minLength: 2,
+                source: availableTags
+            });
+        });
+    </script>
+    <!-- Autocomplete Ends -->
+</head>
+<body>
+<header
+        style="display: flex; justify-content: space-between; align-items: center; background: #363E4E; height: 100px; padding: 0 20px"
+>
+    <a href="https://easygenerator.com/">
+        <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 152 54"
+                style="width: 152px; height: 54px;"
+        >
+            <defs>
+                <path
+                        id="a"
+                        d="M10.743 51.67c-14.31-8.14-14.265-41.82-.222-49.728 14.044-7.908 43.176 9.91 43.176 25.054 0 15.143-28.644 32.815-42.954 24.674z"
+                ></path>
+                <linearGradient id="b" x1="50%" x2="50%" y1="100%" y2="0%">
+                    <stop offset="0%" stop-color="#FFA246"></stop>
+                    <stop offset="100%" stop-color="#E14A53"></stop>
+                </linearGradient>
+            </defs>
+            <g fill="none" fill-rule="evenodd">
+                <mask id="c" fill="#fff">
+                    <use xlink:href="#a"></use>
+                </mask>
+                <use fill="#FA994D" fill-rule="nonzero" xlink:href="#a"></use>
+                <path
+                        fill="url(#b)"
+                        fill-rule="nonzero"
+                        d="M10.743 52.566c-14.31-8.141-14.265-41.82-.222-49.728 14.044-7.909 43.176 9.91 43.176 25.053 0 15.144-28.644 32.815-42.954 24.675z"
+                        mask="url(#c)"
+                ></path>
+                <path
+                        fill="#DB466C"
+                        fill-rule="nonzero"
+                        d="M.002 26.173c.1 10.31 3.667 20.577 10.741 24.602 14.168 8.06 42.39-9.185 42.946-24.225.005.149.008.297.008.446 0 15.143-28.644 32.815-42.954 24.674C3.463 47.53-.1 36.778.003 26.173z"
+                ></path>
+                <path
+                        fill="#FFF"
+                        d="M10.092 20.98c3.278 0 5.427 2.633 5.427 5.792 0 .187-.011.362-.022.538-.033.318-.23.46-.526.46H6.8c.36 1.798 1.697 2.72 3.368 2.72 1.041 0 1.907-.438 2.379-1.052.175-.187.34-.296.603-.296l1.403-.011c.362 0 .56.219.417.526-.8 1.788-2.599 2.863-4.835 2.863-3.497 0-5.789-2.48-5.789-5.77 0-3.246 2.313-5.77 5.745-5.77zm-3.3 4.838h6.345c-.311-1.868-1.644-2.676-3.056-2.676-1.768 0-2.967 1.035-3.29 2.676zm21.08-4.552c.317 0 .493.175.493.494v9.981c0 .318-.176.494-.494.494H26.49c-.318 0-.493-.176-.493-.494v-1.08c-.83 1.151-2.12 1.859-3.848 1.859-2.982 0-5.449-2.512-5.449-5.77 0-3.257 2.467-5.77 5.449-5.77 1.728 0 3.018.709 3.848 1.86v-1.08c0-.319.175-.494.493-.494h1.381zm-5.34 8.994c1.974 0 3.465-1.47 3.465-3.51s-1.491-3.51-3.465-3.51c-1.973 0-3.464 1.47-3.464 3.51s1.49 3.51 3.464 3.51zm10.39-5.912c0 2.205 6.085.614 6.085 4.804 0 2.161-1.886 3.368-4.309 3.368-2.247 0-4.034-1.075-4.275-3.16-.033-.34.164-.515.482-.515h1.36c.295 0 .416.165.526.44.186.789.953 1.107 1.907 1.107 1.151 0 1.94-.406 1.94-1.24 0-2.182-6.084-.625-6.084-4.804 0-2.139 1.886-3.367 4.144-3.367 2.05 0 3.815 1.075 4.057 3.159.033.34-.165.515-.483.515h-1.36c-.295 0-.416-.164-.525-.45-.176-.778-.91-1.096-1.689-1.096-.986 0-1.776.406-1.776 1.24zm14.359-2.676c.088-.274.285-.406.56-.406h1.501c.35 0 .526.208.406.56l-4.945 14.401c-.087.275-.296.395-.57.395h-1.502c-.35 0-.526-.208-.405-.56l1.36-3.959-4.046-10.267c-.132-.34.022-.57.383-.57h1.491c.274 0 .46.12.56.384l2.795 7.173 2.412-7.151z"
+                ></path>
+                <path
+                        class="text"
+                        fill="white"
+                        d="M67.426 21.266c.318 0 .493.175.493.493v9.982c0 3.51-2.762 5.166-5.569 5.166-2.598 0-5.054-1.415-5.372-3.773-.022-.34.176-.516.494-.516h1.392c.296 0 .438.154.526.439.263.866 1.294 1.7 2.96 1.7 2.061 0 3.245-1.119 3.245-3.016v-1.345c-.828 1.17-2.133 1.904-3.892 1.904-2.982 0-5.449-2.512-5.449-5.66s2.467-5.66 5.45-5.66c1.758 0 3.063.734 3.891 1.905V21.76c0-.319.176-.494.494-.494h1.337zm-5.317 8.818c1.995 0 3.486-1.47 3.486-3.444s-1.49-3.444-3.486-3.444c-1.995 0-3.486 1.47-3.486 3.444 0 1.975 1.49 3.444 3.486 3.444zm13.47-9.103c3.279 0 5.427 2.632 5.427 5.791 0 .187-.01.362-.021.538-.033.318-.23.46-.527.46h-8.17c.36 1.798 1.697 2.72 3.368 2.72 1.042 0 1.908-.438 2.38-1.052.175-.187.34-.296.602-.296l1.404-.011c.362 0 .559.219.416.526-.8 1.788-2.598 2.863-4.834 2.863-3.498 0-5.789-2.48-5.789-5.77 0-3.246 2.313-5.77 5.745-5.77zm-3.3 4.837h6.345c-.31-1.868-1.644-2.676-3.055-2.676-1.768 0-2.968 1.035-3.29 2.676zm15.993-4.837c2.04 0 3.618 1.557 3.618 4.19v6.57c0 .318-.176.494-.493.494h-1.382c-.318 0-.493-.176-.493-.494v-6.428c0-1.415-.855-2.117-2.006-2.117-1.24 0-2.357.735-2.357 2.743v5.802c0 .318-.176.494-.494.494h-1.381c-.318 0-.494-.176-.494-.494V21.76c0-.319.176-.494.494-.494h1.381c.318 0 .494.175.494.494v.748c.702-1.068 1.773-1.527 3.113-1.527zm11.004 0c3.278 0 5.427 2.632 5.427 5.791 0 .187-.011.362-.022.538-.033.318-.23.46-.526.46h-8.17c.36 1.798 1.697 2.72 3.368 2.72 1.041 0 1.907-.438 2.379-1.052.175-.187.34-.296.603-.296l1.403-.011c.362 0 .56.219.417.526-.8 1.788-2.599 2.863-4.835 2.863-3.497 0-5.789-2.48-5.789-5.77 0-3.246 2.314-5.77 5.745-5.77zm-3.3 4.837h6.345c-.31-1.868-1.644-2.676-3.056-2.676-1.768 0-2.967 1.035-3.29 2.676zm15.532-4.717c.329-.043.504.154.504.472v1.558c0 .307-.132.482-.362.482-1.436.033-2.795.823-2.795 2.984v5.144c0 .318-.176.494-.494.494h-1.381c-.318 0-.493-.176-.493-.494V21.76c0-.319.175-.494.493-.494h1.381c.318 0 .494.175.494.494v1.15c.58-1.159 1.538-1.689 2.653-1.809zm12.605.659v9.981c0 .318-.176.494-.494.494h-1.381c-.318 0-.493-.176-.493-.494v-1.08c-.83 1.151-2.12 1.859-3.848 1.859-2.982 0-5.449-2.512-5.449-5.77 0-3.257 2.467-5.77 5.449-5.77 1.728 0 3.018.709 3.848 1.86v-1.08c0-.319.175-.494.493-.494h1.381c.318 0 .494.175.494.494zm-5.833 8.5c1.974 0 3.465-1.47 3.465-3.51s-1.491-3.51-3.465-3.51c-1.973 0-3.464 1.47-3.464 3.51s1.49 3.51 3.464 3.51zm13.285-8.994c.317 0 .493.175.493.494v1.294c0 .318-.176.493-.493.493h-1.524v8.194c0 .318-.176.494-.494.494h-1.381c-.318 0-.493-.176-.493-.494v-8.194h-1.535c-.318 0-.494-.175-.494-.493V21.76c0-.319.176-.494.494-.494h1.535V18.25c0-.319.175-.494.493-.494h1.381c.318 0 .494.175.494.494v3.016h1.524zm6.881 11.254c-3.212 0-5.788-2.512-5.788-5.77 0-3.257 2.576-5.77 5.788-5.77 3.213 0 5.789 2.513 5.789 5.77 0 3.258-2.576 5.77-5.789 5.77zm0-2.304c1.93 0 3.42-1.47 3.42-3.466 0-1.996-1.49-3.466-3.42-3.466s-3.42 1.47-3.42 3.466c0 1.997 1.49 3.466 3.42 3.466zm12.715-9.115c.328-.043.504.154.504.472v1.558c0 .307-.132.482-.362.482-1.436.033-2.796.823-2.796 2.984v5.144c0 .318-.175.494-.493.494h-1.381c-.318 0-.494-.176-.494-.494V21.76c0-.319.176-.494.494-.494h1.381c.318 0 .493.175.493.494v1.15c.58-1.159 1.539-1.689 2.654-1.809z"
+                ></path>
+            </g>
+        </svg>
+    </a>
+    <div>
+        <a href="https://easygenerator.com/">
+            <button class="btn btn-primary" style="background: linear-gradient(90deg,#2cbd9a 0%,#65c86d); color: white; border: none; width: 150px; padding: 5px; outline: none; border-radius: 20px">Home</button>
+        </a>
+    </div>
+</header>
+<div class="wrapper" style="margin: 0 20px">
+    <h1>Practice Page</h1>
+    <div class="block large-row-spacer">
+        <div class="cen-right-align">
+            <fieldset>
+                <legend>Dropdown</legend>
+                <select
+                        id="dropdown-class-example"
+                        name="dropdown-class-example"
+                        style="border: 1px solid green; outline: none; padding: 5px 10px; border-radius: 25px; text-align: center"
+                >
+                    <option value="option1">Option1</option>
+              <option value="option2">Option2</option>
+                    <option value="option3">Option3</option>
+                </select>
+            </fieldset>
+        </div>
+    </div>
+    <div class="image-upload-wrapper">
+        <h3>Upload your image here</h3>
+        <input type="file" name="img" accept="image/png, image/jpeg" oninput="uploadImage()"/>
+    </div>
+    <div class="block large-row-spacer">
+        <div class="cen-align">
+            <fieldset>
+                <legend class="switch-tab">Open new tab</legend>
+                <button id="opentab" class="btn-style class1 class2" onclick="openTab()" target="_blank"
+                   style="background: linear-gradient(90deg,#2cbd9a 0%,#65c86d); color: white; border: none; width: 150px; padding: 5px; outline: none; border-radius: 20px">Open Tab</button
+                >
+            </fieldset>
+        </div>
+        <div class="">
+            <fieldset class="pull-right">
+                <legend>Invoke an alert/confirmation modal</legend>
+                <input id="name" name="enter-name" class="inputs" placeholder="Enter Your Name" type="text"
+                       style="border: 1px solid green; outline: none; padding: 5px 10px; border-radius: 25px; text-align: center"/><br/>
+                <input id="alertbtn" class="btn-style" value="Alert" onclick="displayAlert()" type="submit"
+                       style="background: linear-gradient(90deg,#2cbd9a 0%,#65c86d); color: white; border: none; width: 150px; padding: 5px; outline: none; border-radius: 20px; margin-top: 10px"/>
+                <input id="confirmbtn" class="btn-style" value="Confirm" onclick="displayConfirm()" type="submit"
+                       style="background: linear-gradient(90deg,#2cbd9a 0%,#65c86d); color: white; border: none; width: 150px; padding: 5px; outline: none; border-radius: 20px; margin-top: 10px"/>
+            </fieldset>
+        </div>
+        <br/>
+    </div>
+    <div class="block large-row-spacer">
+        <div class="">
+            <fieldset>
+                <legend>Show/hide the input</legend>
+                <input id="hide-textbox" class="btn-style class2" value="Hide" onclick="hideElement()" type="submit"
+                       style="background: linear-gradient(90deg,#2cbd9a 0%,#65c86d); color: white; border: none; width: 150px; padding: 5px; outline: none; border-radius: 20px"/>
+                <input id="show-textbox" class="btn-style class2" value="Show" onclick="showElement()" type="submit"
+                       style="background: linear-gradient(90deg,#2cbd9a 0%,#65c86d); color: white; border: none; width: 150px; padding: 5px; outline: none; border-radius: 20px"/>
+                <br/><br/>
+                <input
+                        id="displayed-text"
+                        name="show-hide"
+                        class="inputs displayed-class"
+                        placeholder="Hide/Show Example"
+                        type="text"
+                        style="border: 1px solid green; outline: none; padding: 5px 10px; border-radius: 25px; text-align: center"
+                />
+            </fieldset>
+        </div>
+    </div>
+    <div class="block large-row-spacer">
+        <div class="left-align">
+            <fieldset style="margin-bottom:60px">
+                <legend>Hover</legend>
+                <div class="hover-container" onmouseover="showHoverPopup()" onmouseleave="hideHoverPopup()">
+                    <button class="btn btn-primary hover-btn"
+                            style="background: linear-gradient(90deg,#2cbd9a 0%,#65c86d); color: white; border: none; width: 150px; padding: 5px; outline: none; border-radius: 20px">
+                        Mouse Hover
+                    </button>
+                    <div class="hover-content">
+                        <a href="#top">Top</a>
+                        <a href="">Reload</a>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="block large-row-spacer">
+        <fieldset>
+            <legend>iFrame</legend>
+            <iframe
+                    id="courses-iframe"
+                    src="https://easygenerator.com/"
+                    name="iframe-name"
+                    style="width: 100%; height: 600px"
+                    scrolling="yes"
+                    marginwidth="0"
+                    marginheight="0"
+                    vspace="0"
+                    hspace="0"
+                    frameborder="0"
+            >
+            </iframe>
+        </fieldset>
+    </div>
+</div>
+<div id="gf-BIG" class="gffoot" style="background: #363E4E; padding: 20px">
+    <table class="gf-t">
+        <tbody>
+        <tr>
+            <td>
+                <h4 style="color: white">Social Media</h4>
+                <ul style="display: flex; flex-direction: row;">
+                    <li class="gf-li" style="margin-right: 10px">
+                        <a href="https://www.facebook.com/easygenerator/" target="_blank" style="color: white">Facebook</a>
+                    </li>
+                    <li class="gf-li" style="margin-right: 10px">
+                        <a href="https://twitter.com/easygenerator" target="_blank" style="color: white">Twitter</a>
+                    </li>
+                    <li class="gf-li"><a href="https://www.youtube.com/user/easygenerator" target="_blank" style="color: white">Youtube</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<ul
+        id="ui-id-1"
+        tabindex="0"
+        class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
+        style="display: none;"
+></ul>
+<div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
+</body>
+</html>

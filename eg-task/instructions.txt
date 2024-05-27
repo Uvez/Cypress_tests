@@ -1,0 +1,22 @@
+Hello there,
+
+Before we can consider your CV for a technical interview, we’d like to ask you to perform a short tech task for us to evaluate your skills and coding approach. Please follow the instructions below to complete the task:
+1. Create an empty public Github repository
+2. Initialize a Cypress project there (use any version you like)
+3. Create an npm script to run the task.html file on a localhost
+4. Cover every element in the html with at least one meaningful test that can guarantee its proper work (you can add more tests if you wish). IMPORTANT: the content of the iframe is considered to be one element meaning there's no need to test all tabs and things there
+5. Send a link to your Github repository to the recruiter
+
+REQUIREMENTS:
+- Use Javascript or Typescript (TS is more preferable)
+- Use Prettier to prettify your code, make sure to include the config in your project
+- Read necessary data from the Cypress environment
+- Mock any request using a fixture file
+- Use the Page Object pattern
+- If you use any 3-rd party libraries, make sure to leave a comment on why you use them
+- Create npm scripts for running your tests both in UI (Cypress runner) and headless modes
+- Read the alert-text.txt file and use its contents as the text to invoke the alert. The reading itself must be done by Node.js via cy.task
+- Add a README file to your repository with all the information you consider important
+
+Wishing you good luck,
+The Easygenerator Test Automation team
