@@ -34,6 +34,7 @@ Follow the below steps
     "e.g http://localhost:3000/task"
 
 * Update the URL into cypress.config.js in env.
+  
   ![image](https://github.com/Uvez/Cypress_tests/assets/4579657/77f0c624-377e-427c-8316-f8e21aba89ca)
 
 ## Running tests
