@@ -48,7 +48,7 @@ To execute your Cypress Runner and your `task.html` file as localhost.
 To execute your script in headless mode and your `task.html` file as localhost. 
 Run below command
     `npm run test:practiceTest`
-  It will run your script in headless mode and execute your task.html file as localhost in your system.
+  It will run your script in headless mode and execute your `task.html` file as localhost in your system.
 
 To execute your script in headless mode and your `task.html` file as localhost. 
 Run below command :
