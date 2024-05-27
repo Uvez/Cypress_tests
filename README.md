@@ -59,11 +59,11 @@ Follow the below steps
  It will run your script in headless mode in edge and execute your task.html file as localhost
 
 ## Test Reporting 📑
- * This framework uses [cypress-mochawesome-reporter](https://www.npmjs.com/package/cypress-mochawesome-reporter) to generate index.html test reports.
+ * This framework uses [cypress-mochawesome-reporter](https://www.npmjs.com/package/cypress-mochawesome-reporter) to generate `index.html` test reports.
 * Add the following options to `cypress.config.js`
   //cypress-mochawesome-reporter
-  reporter: 'cypress-mochawesome-reporter',
-  require('cypress-mochawesome-reporter/plugin')(on);  
+  `reporter: 'cypress-mochawesome-reporter',`
+  `require('cypress-mochawesome-reporter/plugin')(on);`  
 
 
 
