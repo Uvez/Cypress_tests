@@ -9,8 +9,11 @@
 * `npm init` to setup node project with package.json
 * `npm install --save-dev serve` to install serve as dev dependency. It is used to serve our task.html file as a Website
 * `npm install --save-dev concurrently` to install concurrently as dev dependency. It is used to run npm commands cocurrently
-* `npm install --save-dev cypress` to install cypress as dev dependency. Install Cypress in the system
+* `npm install --save-dev cypress` to install cypress as dev dependency. Install Cypress in the system.
 * `npx cypress open` to open the cypress test runner and choose `E2E Testing` which will create cypress config, support and fixture folders.
+* If cypress does not open, gives you error message such as "No version of Cypress is installed in:". Use below command to install cypress once again.
+         `npx cypress install --force`
+  
 * `npm install --save-dev cypress-file-upload` to install cypress-file-upload as dev dependency. It is used for file upload element
 * `npm install --save-dev cypress-iframe` to install cypress-iframe as dev dependency. It is used to detect iframe elements
 * `npm install --save-dev cypress-mochawesome-reporter` to install cypress-mochawesome-reporter as dev dependency. It is used for reporting.
