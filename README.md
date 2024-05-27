@@ -40,21 +40,21 @@ Follow the below steps
   ![image](https://github.com/Uvez/Cypress_tests/assets/4579657/77f0c624-377e-427c-8316-f8e21aba89ca)
 
 ## Running tests
-
-* To execute your cypress runner and your `task.html` file as localhost.
-* Run below command
+To execute your Cypress Runner and your `task.html` file as localhost. 
+ Run below command :
     `npm run start`
-  It will open cypress runner and execute your `task.html` file as localhost. In cypress Runner, execute practiceTest.cy.js in e2e folder 
+  It will open Cypress Runner and execute your `task.html` file as localhost. In cypress Runner, execute practiceTest.cy.js in Cypress/e2e folder 
 
-* To execute your script in headless mode and your `task.html` file as localhost. run below command
+To execute your script in headless mode and your `task.html` file as localhost. run below command
     `npm run test:practiceTest`
-  It will run your script in headless mode and execute your task.html file as localhost
+  It will run your script in headless mode and execute your task.html file as localhost in your system.
 
-* To execute your script in headless mode and your `task.html` file as localhost. run below command
+To execute your script in headless mode and your `task.html` file as localhost. 
+Run below command :
     `npm run test:chrome`
- It will run your script in headless mode in chrome and execute your `task.html` file as localhost
+It will run your script in headless mode in chrome and execute your `task.html` file as localhost
 
-* To execute your script in headless mode and your `task.html` file as localhost. run below command
+To execute your script in headless mode and your `task.html` file as localhost. run below command
     `npm run test:edge`
  It will run your script in headless mode in edge and execute your task.html file as localhost
 
