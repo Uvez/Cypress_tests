@@ -24,7 +24,7 @@ Project configs are defined under `cypress.config.js`
 Test data are stored under `cypress/fixtures/testData.json`
 
 
-## Running task.task.html as localhost and update the localhost in env file
+## Running `task.html` as localhost and update the localhost in env file ##
 To run `task.html` as host.
 Follow the below steps 
 * Run the following command in cmd where `task.html` is stored in the directory.
