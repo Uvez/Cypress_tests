@@ -61,6 +61,7 @@ Follow the below steps
 ## Test Reporting 📑
  * This framework uses [cypress-mochawesome-reporter](https://www.npmjs.com/package/cypress-mochawesome-reporter) to generate `index.html` test reports.
 * Add the following options to `cypress.config.js`
+
   //cypress-mochawesome-reporter
   `reporter: 'cypress-mochawesome-reporter',`
   `require('cypress-mochawesome-reporter/plugin')(on);`  
