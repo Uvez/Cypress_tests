@@ -43,9 +43,10 @@ Follow the below steps
 To execute your Cypress Runner and your `task.html` file as localhost. 
  Run below command :
     `npm run start`
-  It will open Cypress Runner and execute your `task.html` file as localhost. In cypress Runner, execute practiceTest.cy.js in Cypress/e2e folder 
+  It will open Cypress Runner and execute your `task.html` file as localhost. In cypress Runner, execute `practiceTest.cy.js` in `Cypress/e2e` folder 
 
-To execute your script in headless mode and your `task.html` file as localhost. run below command
+To execute your script in headless mode and your `task.html` file as localhost. 
+Run below command
     `npm run test:practiceTest`
   It will run your script in headless mode and execute your task.html file as localhost in your system.
 
@@ -54,9 +55,10 @@ Run below command :
     `npm run test:chrome`
 It will run your script in headless mode in chrome and execute your `task.html` file as localhost
 
-To execute your script in headless mode and your `task.html` file as localhost. run below command
+To execute your script in headless mode and your `task.html` file as localhost. 
+Run below command
     `npm run test:edge`
- It will run your script in headless mode in edge and execute your task.html file as localhost
+ It will run your script in headless mode in edge and execute your `task.html` file as localhost
 
 ## Test Reporting 📑
  * This framework uses [cypress-mochawesome-reporter](https://www.npmjs.com/package/cypress-mochawesome-reporter) to generate `index.html` test reports.
