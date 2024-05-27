@@ -24,23 +24,25 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import 'cypress-iframe'
+//to get Iframe
 Cypress.Commands.add('getIframe', () => {
     return cy
         .get('#courses-iframe')
         .its('0').should('be.visible')      
         .then(cy.wrap)
     })
-
+// to select the dropdown value
 Cypress.Commands.add('selectFromDropdown',(selector,value)=>{
     cy.get(selector).select(value)
 })
 
+//to verify alert message
 Cypress.Commands.add('VerifyAlertMessage',(expectedtext)=>{
     cy.on('window:confirm', (txt) => {
         expect(txt).to.contains(expectedtext); 
 })
 })
-
+//closing the alert message
 Cypress.Commands.add('closeAlertMessage',()=>{
     const originalAlert = window.alert
     window.alert = function(message){
