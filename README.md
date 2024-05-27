@@ -25,10 +25,10 @@ Test data are stored under 'cypress/fixtures/testData.json'
 To run 'task.html' as host.
 Follow the below steps 
 * Run the following command in cmd
-    serve
+    `serve`
 
 * Verify and check the localhost e.g which port it is been executed
-    e.g http://localhost:3000/task
+    "e.g http://localhost:3000/task"
 
 * Update the URL into cypress.config.js in env.
 
