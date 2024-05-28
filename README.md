@@ -36,7 +36,7 @@ Follow the below steps
 
 * to stop the server - Use `CTRL + C`
 
-* Update the localhost URL into cypress.config.js in env as below.
+* Update the localhost URL into `cypress.config.js` in env as below.
   
   ![image](https://github.com/Uvez/Cypress_tests/assets/4579657/77f0c624-377e-427c-8316-f8e21aba89ca)
 
